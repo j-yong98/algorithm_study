@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
 
-public class BOJ2519 {
+public class BOJ2915 {
     static int N;
     static char[] arr;
     static char[] temp;
