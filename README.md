@@ -30,3 +30,16 @@
 | 7주차 | 10/13 ~ 10/19 | https://www.acmicpc.net/problem/32173 | DP - https://www.acmicpc.net/problem/10573 | https://www.acmicpc.net/problem/16402 |  |
 | 8주차 | 10/20 ~ 10/26 | https://www.acmicpc.net/problem/9242 | 트리 - https://www.acmicpc.net/problem/2132 | https://school.programmers.co.kr/learn/courses/30/lessons/92344 |  |
 | **보너스 주** | 10/27 ~ 10/31 | 이전 주차 어려웠던 문제 재풀이 |  |  |  |
+
+## 진행표
+| 주차 | JSY | doongdang | j-yong98 | sikutisa |
+| --- | :--: | :--: | :--: | :--: |
+| 1주차 | ✅ | ✅ | ✅ | ✅ |
+| 2주차 | ✅ | ✅ | ✅ | ✅ |
+| 3주차 | ✅ | ✅ | ✅ | ✅ |
+| 4주차 | ✅ | ✅ | ✅ | ✅ |
+| 5주차 | ❌ | ✅ | ✅ | ✅ |
+| 6주차 |  |  |  |  |
+| 7주차 |  |  |  |  |
+| 8주차 |  |  |  |  |
+
