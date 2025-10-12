@@ -1,0 +1,36 @@
+import java.util.*;
+
+class Solution {
+    List<List<Integer>> result = new ArrayList<>();
+
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        dfs(nums, target, 0, new ArrayList<>(), 0);
+        return result;
+    }
+
+    private void dfs(int[] nums, long target, int start, List<Integer> list, long sum) {
+        if (list.size() == 4) {
+            if (sum == target) {
+                result.add(new ArrayList<>(list));
+            }
+            return;
+        }
+
+        for (int i = start; i < nums.length; i++) {
+            if (i > start && nums[i] == nums[i - 1]) continue;
+
+            if (list.size() + (nums.length - i) < 4) break;
+
+            int remain = 4 - list.size();
+            long min = sum + (long)nums[i] + (long)nums[i] * (remain - 1);
+            long max = sum + (long)nums[nums.length - 1] * remain;
+            if (min > target) break; 
+            if (max < target) continue; 
+
+            list.add(nums[i]);
+            dfs(nums, target, i + 1, list, sum + nums[i]);
+            list.remove(list.size() - 1);
+        }
+    }
+}
