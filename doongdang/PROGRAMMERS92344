@@ -1,0 +1,63 @@
+/*
+	목표 :
+
+	조건 :
+
+	접근 : 누적합같은데.. 더는 생각이..
+
+	참고 : https://chem-coder.tistory.com/165
+
+*/
+
+class Solution {
+
+  public int solution(int[][] board, int[][] skill) {
+    int answer = 0;
+    int N = board.length;
+    int M = board[0].length;
+
+    int[][] generatedPrefixSumArray = generatePrefixSumArray(N, M, skill);
+
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < M; j++) {
+        if(board[i][j] + generatedPrefixSumArray[i][j] <= 0) continue;
+
+        answer++;
+      }
+    }
+
+    return answer;
+  }
+
+  private int[][] generatePrefixSumArray(int N, int M, int[][] skill) {
+    int[][] prefixSum = new int[N + 1][M + 1];
+
+    for (int[] row : skill) {
+      int command = row[0];
+      int degree = row[5];
+
+      if (command == 1) {
+        degree *= -1;
+      }
+
+      prefixSum[row[1]][row[2]] += degree;
+      prefixSum[row[1]][row[4] + 1] -= degree;
+      prefixSum[row[3] + 1][row[2]] -= degree;
+      prefixSum[row[3] + 1][row[4] + 1] += degree;
+    }
+
+    for (int i = 0; i < N + 1; i++) {
+      for (int j = 1; j < M + 1; j++) {
+        prefixSum[i][j] += prefixSum[i][j - 1];
+      }
+    }
+
+    for (int i = 0; i < M + 1; i++) {
+      for (int j = 1; j < N + 1; j++) {
+        prefixSum[j][i] += prefixSum[j - 1][i];
+      }
+    }
+
+    return prefixSum;
+  }
+}
